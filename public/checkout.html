@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+  <header>
+    <h1>Checkout</h1>
+    <a href="index.html" class="back-to-shop">← Back to Shop</a>
+  </header>
+
+  <main>
+    <div class="checkout-container">
+      <div id="cart-summary">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total"></p>
+      </div>
+
+      <div id="checkout-form">
+        <h2>Shipping & Payment</h2>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name">
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address"></textarea>
+
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" name="payment-method">
+          <option value="">Select</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="gcash">GCash</option>
+          <option value="maya">Maya QR</option>
+          <option value="bank">Bank Transfer</option>
+        </select>
+
+        <div id="bank-details" class="hidden">
+          <p><strong>Bank:</strong> BDO Unibank, Inc.</p>
+          <p><strong>Account Name:</strong> Lia Shop</p>
+          <p><strong>Account Number:</strong> 001234567890</p>
+          <p><strong>Card CVV:</strong> 123</p>
+          <p>After the transfer, please send a copy of the proof of payment to our email: payments@liashop.com</p>
+        </div>
+
+        <div id="maya-details" class="hidden">
+          <img src="https://www.maya.ph/hubfs/Maya/Maya%20Consumer%20Home/qr-code-one%20link-April%2027.svg" alt="Maya QR Logo" style="height: 250px;">
+          <p>Please scan the QR code using your Maya app.</p>
+        </div>
+
+        <div id="gcash-details" class="hidden">
+          <img src="https://www.executivegourmet.ph/wp-content/uploads/2024/08/GcahQR.jpg" alt="GCash Logo" style="height: 250px;">
+          <p>Please scan the QR code using your GCash app.</p>
+        </div>
+
+        <button id="confirm-order-btn">Confirm Order</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Lia's Online Market</p>
+  </footer>
+
+  <script src="js/checkout.js"></script>
+
+</body>
+</html>

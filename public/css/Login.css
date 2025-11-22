@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Login Card */
+.wrapper {
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85); /* makes text easier to read */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    color: #222;
+    backdrop-filter: blur(10px);
+}
+
+/* Title */
+.wrapper h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+/* Input boxes */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-bottom-color: #008000; /* green focus highlight */
+}
+
+/* Remember & Forgot Section */
+.remember-forgot {
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.remember-forgot label input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+.btn button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn button:hover {
+    background: #008000; /* green hover */
+}
+
+/* Register link */
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link p {
+    color: #333;
+}
+
+.register-link a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

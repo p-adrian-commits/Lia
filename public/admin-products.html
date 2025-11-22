@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Products</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">Lia Shop</div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li class="active"><a href="admin-products.html">Products</a></li>
+                    <li><a href="admin-orders.html">Orders</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer" style="margin-top: auto; padding: 20px;">
+                 <button id="logout-btn" class="add-product-btn" style="width: 100%;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Products</h1>
+                <div class="header-actions">
+                    <button class="add-product-btn" onclick="document.getElementById('add-product-modal').style.display='block'">+ Add Product</button>
+                </div>
+            </header>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list-body">
+                        <!-- Product rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+        <div style="background:white; margin:10% auto; padding:20px; width:50%; border-radius:8px;">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <p><input type="text" name="product-name" placeholder="Product Name" required style="width:100%; padding:8px;"></p>
+                <p><input type="text" name="product-category" placeholder="Category" required style="width:100%; padding:8px;"></p>
+                <p><input type="number" name="product-price" placeholder="Price" required step="0.01" style="width:100%; padding:8px;"></p>
+                <p><input type="text" name="product-image" placeholder="Image URL" required style="width:100%; padding:8px;"></p>
+                <p>
+                    <label for="product-instock">In Stock: </label>
+                    <div class="switch">
+                      <input id="product-instock" type="checkbox" name="product-instock" checked>
+                      <span class="slider round"></span>
+                    </div>
+                </p>
+                <button type="submit" class="add-product-btn">Submit</button>
+                <button type="button" onclick="document.getElementById('add-product-modal').style.display='none'" class="add-product-btn" style="background:grey;">Cancel</button>
+            </form>
+             <p id="form-message" style="margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin-products.js"></script>
+</body>
+</html>

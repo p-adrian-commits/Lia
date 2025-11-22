@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Lia Shop</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                Lia Shop
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="/admin.html">Dashboard</a></li>
+                    <li><a href="admin-products.html">Products</a></li>
+                    <li><a href="admin-orders.html">Orders</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer" style="margin-top: auto; padding: 20px;">
+                 <button id="logout-btn" class="add-product-btn" style="width: 100%;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <p class="card-value">0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p class="card-value">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p class="card-value">0</p>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="recent-activity-feed">
+                    <p>Recent activity feed will be displayed here.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
