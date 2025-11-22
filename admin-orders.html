@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Orders</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">Lia Shop</div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="admin-products.html">Products</a></li>
+                    <li class="active"><a href="admin-orders.html">Orders</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer" style="margin-top: auto; padding: 20px;">
+                 <button id="logout-btn" class="add-product-btn" style="width: 100%;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Orders</h1>
+            </header>
+
+            <div class="table-container" style="margin-bottom: 30px;">
+                <h2>Pending Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pending-orders">
+                        <!-- Pending orders will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container" style="margin-bottom: 30px;">
+                <h2>For Delivery</h2>
+                <table>
+                    <thead>
+                         <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="delivery-orders">
+                        <!-- Orders for delivery will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h2>Delivered</h2>
+                <table>
+                    <thead>
+                         <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="delivered-orders">
+                        <!-- Delivered orders will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <script type="module" src="js/admin-orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lia's Online Market</title>
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+\1
+  <div id="landing-products" class="landing-products-grid"></div>
+
+ <header>
+   <div class="logo">
+     <img src="images/LOGO/LIA.jpg" alt="Logo">
+     <h1>Online Market</h1>
+   </div>
+
+    <button id="admin-btn" class="admin-btn" onclick="window.location.href='admin.html'">
+      Admin Panel
+    </button>
+
+   <div class="search-cart">
+     <input type="text" id="search-input" placeholder="Search products..." onkeyup="searchProducts()">
+    <button id="logout-btn" class="logout-btn">Logout</button>
+
+     <!-- Cart Button -->
+     <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
+   </div>
+ </header>
+
+ <nav class="categories">
+   <button onclick="showCategory('all')" class="category-btn active">All Products</button>
+   <button onclick="showCategory('meat')" class="category-btn">🥩 Meat</button>
+   <button onclick="showCategory('Seafood')" class="category-btn">🐟 Seafood</button>
+   <button onclick="showCategory('vegetable')" class="category-btn">🥬 Vegetables</button>
+   <button onclick="showCategory('fruit')" class="category-btn">🍎 Fruits</button>
+ </nav>
+
+ <section class="hero">
+   <h2>Frozen & Organic Products</h2>
+   <p>Discover our premium selection of frozen meat, Vegetables, and fruits delivered right to your door.</p>
+ </section>
+
+ <main>
+   <div class="sort">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select" onchange="sortProducts()">
+       <option value="name">Name (A–Z)</option>
+       <option value="price-low">Price: Low → High</option>
+       <option value="price-high">Price: High → Low</option>
+       <option value="stock">Stock</option>
+     </select>
+   </div>
+
+   <!-- Products Grid -->
+   <div id="products-grid" class="product-grid"></div>
+
+   <!-- No products message -->
+   <p id="no-products" class="hidden">No products found matching your search.</p>
+ </main>
+
+ <!-- CART SIDEBAR -->
+ <aside id="cart-sidebar" class="hidden">
+   <div id="cart-header">
+     <h3>Shopping Cart</h3>
+     <button onclick="toggleCart()">×</button>
+   </div>
+
+   <div id="cart-items"></div>
+   <div id="empty-cart">Your cart is empty.</div>
+
+   <div id="cart-footer">
+     <p>Total: <span id="cart-total">₱0.00</span></p>
+     <button onclick="checkout()" id="checkout-btn" disabled>Checkout</button>
+   </div>
+ </aside>
+
+ <footer>
+   <p>© 2025 Lia's Online Market — Premium Quality Products</p>
+ </footer>
+
+ <!-- FIXED: No module type -->
+ <script type="module" src="js/shop.js"></script>
+
+
+  <script type="module">
+    import {{ collection, getDocs }} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+    import {{ db }} from "./js/firebase-config.js";
+
+    async function loadLandingProducts() {
+      const container = document.getElementById('landing-products');
+      if (!container) return;
+      container.innerHTML = '';
+      try {
+        const snapshot = await getDocs(collection(db, 'products'));
+        snapshot.forEach(doc => {
+          const p = doc.data();
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${'${p.image}'}" alt="${'${p.name}'}" style="max-width:150px;">
+            <h3>${'${p.name}'}</h3>
+            <p>₱${'${Number(p.price).toFixed(2)}'}</p>
+          `;
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error('Landing load error', err);
+        container.innerHTML = '<p>Unable to load products.</p>';
+      }
+    }
+
+    // run on load
+    window.addEventListener('DOMContentLoaded', loadLandingProducts);
+  </script>
+\1
+</html>
